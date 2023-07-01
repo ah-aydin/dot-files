@@ -1,17 +1,21 @@
-export ZSH=~/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="pixegami-agnoster"
+ZSH_THEME="agnoster"
 
-plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Java
-export JDTLS_HOME=/home/hamza/Dev/tools/jdtls/
+bindkey -v
+
+plugins=(
+  git
+  rust
+  vi-mode
+)
+
+# Path
+export PATH="/home/hamza/.local/share/bob/nvim-bin:$PATH"
 
 # aya-rs
 alias aya_gen="cargo generate https://github.com/aya-rs/aya-template"
@@ -27,4 +31,4 @@ alias vim=nvim
 # Tmux
 alias tmux_kill="tmux kill-session -t"
 alias tmux_open="tmux attach -t"
-alias proj_squat="source ~/Dev/scripts/squat.sh"
+alias proj_squat="source ~/scripts/squat.sh"
