@@ -1,8 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="xiong-chiamiov"
-
-plugins=(git)
+ZSH_THEME="jnrowe"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -14,21 +12,21 @@ plugins=(
   vi-mode
 )
 
-# Path
+# Add bob nvim manager to PATH
 export PATH="/home/hamza/.local/share/bob/nvim-bin:$PATH"
 
-# aya-rs
-alias aya_gen="cargo generate https://github.com/aya-rs/aya-template"
-alias aya_compile_ebpf="cargo xtask build-ebpf"
-alias aya_run="RUST_LOG=info cargo xtask run"
-
-# Minikube
-alias kubectl="minikube kubectl --"
-
-# Nvim
-alias vim=nvim
-
 # Tmux
-alias tmux_kill="tmux kill-session -t"
-alias tmux_open="tmux attach -t"
-alias proj_squat="source ~/scripts/squat.sh"
+alias armgcc="arm-linux-gnueabihf-gcc -static"
+
+scripts_dir="$HOME/Dev/dot-files/scripts"
+
+if [ -d "$scripts_dir" ]; then
+  for file in "$scripts_dir"/*.sh; do
+    if [ -f "$file" ]; then
+      source "$file"
+    fi
+  done
+else
+  echo "Could not find scripts directory '$scripts_dir'"
+fi
+
