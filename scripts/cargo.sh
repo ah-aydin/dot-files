@@ -1,4 +1,4 @@
 alias crr="cargo run --release --"
 alias cbr="cargo build --release" 
-alias crd="cargo run --debug --"
-alias cbd="cargo bulid --debug" 
+alias crd="cargo run  --"
+alias cbd="cargo bulid"
