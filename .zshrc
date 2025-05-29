@@ -14,7 +14,7 @@ plugins=(
 )
 
 # Add bob nvim manager to PATH
-export PATH="/home/hamza/.local/share/bob/nvim-bin:$PATH"
+export PATH="/opt/nvim/:$PATH"
 
 alias armgcc="arm-linux-gnueabihf-gcc -static"
 
