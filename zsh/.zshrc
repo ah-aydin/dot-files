@@ -18,7 +18,7 @@ export PATH="/opt/nvim/:$PATH"
 
 alias armgcc="arm-linux-gnueabihf-gcc -static"
 
-scripts_dir="$HOME/Dev/dot-files/scripts"
+scripts_dir="$HOME/src/repos/dot-files/scripts"
 
 if [ -d "$scripts_dir" ]; then
   for file in "$scripts_dir"/*.sh; do
@@ -30,3 +30,6 @@ else
   echo "Could not find scripts directory '$scripts_dir'"
 fi
 
+alias fans_silent="echo silent | sudo tee /sys/devices/platform/msi-ec/fan_mode"
+alias fans_auto="echo auto | sudo tee /sys/devices/platform/msi-ec/fan_mode"
+alias fans_advanced="echo advanced | sudo tee /sys/devices/platform/msi-ec/fan_mode"
